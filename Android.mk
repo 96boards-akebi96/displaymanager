@@ -9,7 +9,7 @@ LOCAL_CFLAGS += -DMALI_ION=1
 LOCAL_CFLAGS += -DMALI_AFBC_GRALLOC=1
 
 LOCAL_C_INCLUDES := $(GRALLOC_DIR)
-LOCAL_C_INCLUDES += $(TOP)/system/core/libion/kernel-headers
+LOCAL_C_INCLUDES += $(TOP)/system/core/libion
 
 LOCAL_SRC_FILES := 	\
     DisplayManager.cpp \

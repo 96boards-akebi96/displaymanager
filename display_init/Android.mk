@@ -16,7 +16,7 @@ LOCAL_CFLAGS += -DAPI_IS_28
 
 
 LOCAL_C_INCLUDES := $(GRALLOC_DIR)
-LOCAL_C_INCLUDES += $(TOP)/system/core/libion/kernel-headers
+LOCAL_C_INCLUDES += $(TOP)/system/core/libion
 LOCAL_C_INCLUDES += $(BSP_TOP_DIR)/output/build/linux-custom/arch/arm64/include/generated/uapi
 LOCAL_C_INCLUDES += frameworks/native/include/media/openmax
 
