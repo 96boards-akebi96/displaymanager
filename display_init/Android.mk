@@ -7,7 +7,7 @@ LOCAL_C_INCLUDES :=
 USE_BASE_NAME := bsp
 LOCAL_CFLAGS += -DSC1401AJ1
 
-GRALLOC_DIR += vendor/arm/mali_lib/pie/include
+GRALLOC_DIR += vendor/arm/gralloc/driver/product/android/gralloc/src
 # Additional CFLAGS for "gralloc_priv.h"
 LOCAL_CFLAGS += -DMALI_ION=1
 LOCAL_CFLAGS += -DMALI_AFBC_GRALLOC=1
