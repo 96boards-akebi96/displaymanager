@@ -92,6 +92,7 @@ class IDisplayManager : public IInterface {
             SET_POWER_MODE,
             GET_DISPLAY_CONFIGS,
             SET_ACTIVE_CONFIG,
+            DUMP,
         };
 
         enum {
@@ -103,6 +104,7 @@ class IDisplayManager : public IInterface {
         virtual int32_t SetPowerMode(int32_t mode) = 0;
         virtual int32_t GetDisplayConfigs(int32_t *num_config, dm_display_attribute **configs) = 0;
         virtual int32_t setActiveConfig(int32_t index) = 0;
+        virtual String8 Dump(void) = 0;
         DECLARE_META_INTERFACE(DisplayManager);  // Expands to 5 lines below:
 };
 

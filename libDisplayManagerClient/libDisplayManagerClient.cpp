@@ -100,7 +100,19 @@ class BpDisplayManager : public BpInterface<IDisplayManager> {
             }
             return reply.readInt32();
         }
-
+        virtual String8 Dump(void){
+            ATRACE_CALL();
+            Parcel data, reply;
+            data.writeInterfaceToken(IDisplayManager::getInterfaceDescriptor());
+            int ret = remote()->transact(DUMP, data, &reply);
+            if (ret != NO_ERROR) {
+                // ALOGI("%s:%d ----------------", __func__, __LINE__);
+                String8 ret;
+                ret.append("\n");
+                return ret;
+            }
+            return reply.readString8();
+        }
 };
 IMPLEMENT_META_INTERFACE(DisplayManager, "BpDisplayManager");
 

@@ -54,4 +54,5 @@ class DisplayManager : public BnDisplayManager
         virtual int32_t SetPowerMode(int32_t mode);
         virtual int32_t GetDisplayConfigs(int32_t *num_config, dm_display_attribute **configs);
         virtual int32_t setActiveConfig(int32_t index);
+        virtual String8 Dump(void);
 };

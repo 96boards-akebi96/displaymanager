@@ -244,7 +244,7 @@ int32_t DisplayManager::setActiveConfig(int32_t index)
     return ret;
 }
 
-status_t DisplayManager::dump(int fd, const Vector<String16>& /* args */)
+String8 DisplayManager::Dump(void)
 {
     String8 out;
     out.append("PlaneShowStatus : ");
@@ -255,6 +255,12 @@ status_t DisplayManager::dump(int fd, const Vector<String16>& /* args */)
         out.append("OSD Port Set ---------------------------\n");
         OsdPortSet->dump(out);
     }
+    return out;
+}
+
+status_t DisplayManager::dump(int fd, const Vector<String16>& /* args */)
+{
+    String8 out = Dump();
     write(fd, out.string(), out.size());
     return OK;
 }
@@ -343,6 +349,11 @@ status_t BnDisplayManager::onTransact(uint32_t code, const Parcel& data, Parcel*
             int32_t index = data.readInt32();
             ret = setActiveConfig(index);
             reply->writeInt32(ret);
+            return NO_ERROR;
+        }
+        case DUMP:{
+            String8 out = Dump();
+            reply->writeString8(out);
             return NO_ERROR;
         }
         default:
