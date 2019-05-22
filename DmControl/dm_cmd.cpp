@@ -35,6 +35,10 @@ int main(int argc, char** argv)
     int32_t cmd = -1;
     int32_t index = -1;
 
+#ifdef USE_VNDSERVICE
+    ProcessState::initWithDriver("/dev/vndbinder");
+#endif /* USE_VNDSERVICE */
+
     while((result=getopt(argc,argv,"ds:h"))!=-1){
         switch(result){
             case 'd': // GetDisplayConfigs
