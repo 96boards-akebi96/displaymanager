@@ -61,28 +61,22 @@ static int setFrameParameter(OMX_NATIVE_DEVICETYPE_VDC *devtype, int w, int h, i
         devtype->eOutputSignal.nVerticalActive      = 2160;
         devtype->eOutputPanel.eVboColorDepth        = OMX_PANEL_VboColor10bit;
         devtype->eOutputPanel.nSsc                  = 0;
+        devtype->eOutputSignal.nVerticalTotal          = 2250;
+        devtype->eOutputSignal.nVerticalProtectMaximum = 2250;
+        devtype->eOutputSignal.nVerticalProtectMinimum = 2250;
 
         switch (fr) {
             case 0x00320000: // 50.00Hz
                 devtype->eOutputSignal.ePixelClockAdjustedBy1000Over1001 = OMX_FALSE;
                 devtype->eOutputSignal.nHorizontalTotal        = 5280;
-                devtype->eOutputSignal.nVerticalTotal          = 2700;
-                devtype->eOutputSignal.nVerticalProtectMaximum = 2700;
-                devtype->eOutputSignal.nVerticalProtectMinimum = 2700;
                 break;
             case 0x003BF000: // 59.94Hz
                 devtype->eOutputSignal.ePixelClockAdjustedBy1000Over1001 = OMX_TRUE;
                 devtype->eOutputSignal.nHorizontalTotal        = 4400;
-                devtype->eOutputSignal.nVerticalTotal          = 2250;
-                devtype->eOutputSignal.nVerticalProtectMaximum = 2250;
-                devtype->eOutputSignal.nVerticalProtectMinimum = 2250;
                 break;
             case 0x003C0000: // 60.00Hz
                 devtype->eOutputSignal.ePixelClockAdjustedBy1000Over1001 = OMX_FALSE;
                 devtype->eOutputSignal.nHorizontalTotal        = 4400;
-                devtype->eOutputSignal.nVerticalTotal          = 2250;
-                devtype->eOutputSignal.nVerticalProtectMaximum = 2250;
-                devtype->eOutputSignal.nVerticalProtectMinimum = 2250;
                 break;
             default:
                 ALOGE( "%s:%d error", __func__, __LINE__);
