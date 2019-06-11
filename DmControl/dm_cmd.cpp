@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (C) 2016 Socionext Inc.
+
 #include <stdio.h>
 #include <unistd.h>
 

@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Copyright (C) 2016 Socionext Inc. */
 
 #include "utils/RefBase.h"
 #include <log/log.h>

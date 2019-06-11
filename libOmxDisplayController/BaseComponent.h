@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Copyright (C) 2016 Socionext Inc. */
 
 #ifndef __BaseComponent_H__
 #define __BaseComponent_H__

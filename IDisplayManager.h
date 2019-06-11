@@ -1,3 +1,6 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Copyright (C) 2016 Socionext Inc. */
+
 #ifndef __IDISPLAY_MANAGER_H__
 #define __IDISPLAY_MANAGER_H__
 
